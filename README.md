@@ -36,12 +36,18 @@ Com esses papéis e funcionalidades, o aplicativo possibilitará uma melhor gest
     * background (xml do layout e color)
     * text (color)
     * button 
+ 
+- Sons: em ações concluídas com sucesso
+
+- Notificações: quando algo for modificado, os usuários vinculados ao laboratório ou a pesquisa serão notificados
 
 - String
     * Todas as string dentro deste recurso deverá ser comentado e agrupado para ficar manutenível.
 
-- Menu
+- Menu: menu de navegação entre as telas e configurações do perfil do usuário
 
-- Fragmentos: utilizado no mapa.
+- Câmera: utilizado para adicionar nova foto ao perfil, atualizar fotos de equipamentos e do local do laboratório, fotos relevantes para a pesquisa
+
+- Fragmentos: utilizado no mapa, usuários vinculados a pesquisa e ao laboratório.
 
 - RecyclerView personalizado: Este recurso mostrará foto do pesquisador, nome, email, grupo de pesquisa.
