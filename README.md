@@ -16,3 +16,32 @@ O software terá como foco a facilitação da colaboração e troca de informaç
 - Visitante: O visitante terá permissões limitadas no sistema. Ele poderá visualizar e pesquisar informações sobre todos os laboratórios, como os recursos disponíveis, as áreas de pesquisa e os projetos em andamento. No entanto, ele não terá permissão para fazer alterações ou adicionar conteúdo ao sistema.
 
 Com esses papéis e funcionalidades, o aplicativo possibilitará uma melhor gestão e integração entre os cursos e laboratórios da universidade, permitindo a otimização dos recursos internos, o desenvolvimento de pesquisas mais colaborativas e o aumento da visibilidade da universidade por meio da publicação de artigos de impacto.
+
+## Recursos
+
+- Banco de dados: Ficará registrado os coordenadores, pesquisadores e o administrador.
+
+- Mapas: Mostra onde fica os laboratórios ou grupo de pesquisa da Universidade.
+
+- Imagens:
+    * Cada imagem terá contentDescription.
+    * Imagem do app diferente da configuração padrão do android.
+
+- Fotos:
+    * Usuário.
+    * Grupo de pesquisa.
+
+- Cores:
+    * statusBarColor (theme)
+    * background (xml do layout e color)
+    * text (color)
+    * button 
+
+- String
+    * Todas as string dentro deste recurso deverá ser comentado e agrupado para ficar manutenível.
+
+- Menu
+
+- Fragmentos: utilizado no mapa.
+
+- RecyclerView personalizado: Este recurso mostrará foto do pesquisador, nome, email, grupo de pesquisa.
