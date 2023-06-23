@@ -13,6 +13,8 @@ public class AdicionarAluno extends AppCompatActivity {
     private EditText nomeAluno, laboratorioAluno, emailAluno, cursoAluno;
     private Button btnSalvarAluno;
 
+    
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,7 +25,7 @@ public class AdicionarAluno extends AppCompatActivity {
         emailAluno = findViewById(R.id.emailAluno);
         cursoAluno = findViewById(R.id.cursoAluno);
         btnSalvarAluno = findViewById(R.id.btnSalvarAluno);
-        
+
 
 
     }
