@@ -20,6 +20,14 @@
     android:gravity="center">
 
     <TextView
+        android:id="@+id/tvPerfil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Seu perfil é de Professor"
+        android:textColor="@color/black"
+        android:layout_marginBottom="16dp"
+        android:textSize="26sp"/>
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Adicionar - Deletar - Incluir"
