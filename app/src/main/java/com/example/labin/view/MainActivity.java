@@ -21,6 +21,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class MainActivity extends AppCompatActivity {
 
 
+    private Button btnAddAluno, btnVisualizarLaboratorio;
     private FirebaseAuth auth;
     private Button logout;
     @Override
@@ -30,15 +31,25 @@ public class MainActivity extends AppCompatActivity {
 
 
         auth = FirebaseAuth.getInstance();
-        //logout = findViewById(R.id.btnLogout);
+        btnAddAluno = findViewById(R.id.btnAddAluno);
+        btnVisualizarLaboratorio = findViewById(R.id.btnVisualizarLaboratorio);
 
-       /* logout.setOnClickListener(new View.OnClickListener() {
+        btnAddAluno.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                auth.signOut();
-                irLogin();
+                Intent intent = new Intent(getApplicationContext(), Aluno.class);
+                startActivity(intent);
             }
-        });*/
+        });
+        btnVisualizarLaboratorio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), Laboratorios.class);
+                startActivity(intent);
+            }
+        });
+
+
     }
 
     @Override
