@@ -16,7 +16,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class AdicionarLaboratorio extends AppCompatActivity {
 
 
-    private EditText latitudeCadastro, longitudeCadastro, nomeCadastro, cursoCadastro, prodessorResponsavelCadastro;
+    private EditText latitudeCadastro, longitudeCadastro, nomeCadastro, FaculdadeResponsavel;
     private Button btnSalvarLab;
     private FirebaseDatabase database;
     private DatabaseReference reference;
@@ -28,9 +28,7 @@ public class AdicionarLaboratorio extends AppCompatActivity {
         latitudeCadastro =findViewById(R.id.latitudeCadastro);
         longitudeCadastro=findViewById(R.id.longitudeCadastro);
         nomeCadastro=findViewById(R.id.nomeCadastro);
-        cursoCadastro=findViewById(R.id.cursoCadastro);
-        prodessorResponsavelCadastro =findViewById(R.id.prodessorResponsavelCadastro);
-        prodessorResponsavelCadastro=findViewById(R.id.prodessorResponsavelCadastro);
+        FaculdadeResponsavel=findViewById(R.id.FaculdadeResponsavel);
         btnSalvarLab=findViewById(R.id.btnSalvarLab);
 
 
@@ -39,14 +37,13 @@ public class AdicionarLaboratorio extends AppCompatActivity {
     public void SalvarDados(View view){
 
         Laboratorio labs = new Laboratorio();
-        labs.setCursoCadastro(cursoCadastro.getText().toString());
         String entrada = latitudeCadastro.getText().toString();
         double valorLatitude = Double.parseDouble(entrada);
         labs.setLatitudeCadastro(valorLatitude);
         entrada = longitudeCadastro.getText().toString();
         double valorLongitude = Double.parseDouble(entrada);
         labs.setLongitudeCadastro(valorLongitude);
-        labs.setProfessorResponsavelCadastro(cursoCadastro.getText().toString());
+        labs.setFaculdadeResponsavel(FaculdadeResponsavel.getText().toString());
         labs.setNomeCadastro(nomeCadastro.getText().toString());
 
         database = FirebaseDatabase.getInstance();

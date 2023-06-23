@@ -4,7 +4,7 @@ import android.widget.EditText;
 
 public class Laboratorio {
 
-    private String  nomeCadastro, cursoCadastro, professorResponsavelCadastro;
+    private String  nomeCadastro, cursoCadastro, FaculdadeResponsavel;
     private double latitudeCadastro, longitudeCadastro;
 
     public Laboratorio() {
@@ -26,12 +26,12 @@ public class Laboratorio {
         this.cursoCadastro = cursoCadastro;
     }
 
-    public String getProdessorResponsavelCadastro() {
-        return professorResponsavelCadastro;
+    public String getFaculdadeResponsavel() {
+        return FaculdadeResponsavel;
     }
 
-    public void setProfessorResponsavelCadastro(String prodessorResponsavelCadastro) {
-        this.professorResponsavelCadastro = prodessorResponsavelCadastro;
+    public void setFaculdadeResponsavel(String faculdadeResponsavel) {
+        FaculdadeResponsavel = faculdadeResponsavel;
     }
 
     public double getLatitudeCadastro() {

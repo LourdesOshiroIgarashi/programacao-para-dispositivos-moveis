@@ -42,20 +42,14 @@
         android:hint="Nome do laboratório"
         android:inputType="text" />
 
-    <EditText
-        android:id="@+id/cursoCadastro"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:hint="Nome do curso"
-        android:inputType="text" />
+
 
     <EditText
-        android:id="@+id/prodessorResponsavelCadastro"
+        android:id="@+id/FaculdadeResponsavel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:hint="Professor responsável"
+        android:hint="Faculdade responsável"
         android:inputType="text" />
 
     <Button
