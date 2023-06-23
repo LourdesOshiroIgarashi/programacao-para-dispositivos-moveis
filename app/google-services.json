@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "144901943878",
+    "project_id": "labin-a4aa1",
+    "storage_bucket": "labin-a4aa1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:144901943878:android:6c143b91d1104420785047",
+        "android_client_info": {
+          "package_name": "com.example.labin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "144901943878-k77nb2bikpc7qnj7kd2jfojt2nks18t0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqA4-qezg7vJhbrB6iLMeCWJJSp_ED024"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "144901943878-k77nb2bikpc7qnj7kd2jfojt2nks18t0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
