@@ -15,23 +15,28 @@
         android:text="Adicionar o aluno no Bando de Dados"
         android:textSize="32sp"/>
     <EditText
+        android:id="@+id/nomeAluno"
         android:layout_marginTop="16dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Nome do Aluno"/>
     <EditText
+        android:id="@+id/laboratorioAluno"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Laboratório do aluno"/>
     <EditText
+        android:id="@+id/emailAluno"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="E-mail do aluno"/>
     <EditText
+        android:id="@+id/cursoAluno"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Curso do aluno"/>
     <Button
+        android:id="@+id/btnSalvarAluno"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Adicionar Aluno"/>
