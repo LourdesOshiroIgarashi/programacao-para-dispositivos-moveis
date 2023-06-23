@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.labin.R;
@@ -22,6 +23,7 @@ import java.util.Map;
 public class AdicionarAluno extends AppCompatActivity {
 
     private EditText nomeAluno, laboratorioAluno, emailAluno, cursoAluno;
+    private TextView txt1;
     private Button btnSalvarAluno;
 
     private FirebaseDatabase database;
@@ -37,19 +39,9 @@ public class AdicionarAluno extends AppCompatActivity {
         emailAluno = findViewById(R.id.emailAluno);
         cursoAluno = findViewById(R.id.cursoAluno);
         btnSalvarAluno = findViewById(R.id.btnSalvarAluno);
+       // txt1 = findViewById(R.id.txt1);
 
 
-
-
-        /*aluno1.setNome("Everton");
-        aluno1.setCurso("Engenharia de Software");
-        aluno1.setEmail("everton.oliveira@ufms.br");
-        aluno1.setLaboratorio("batlab");*/
-
-        /*aluno1.setNome("Lourdes");
-        aluno1.setCurso("Engenharia de Software");
-        aluno1.setEmail("lourdes.oshiro@ufms.br");
-        aluno1.setLaboratorio("lia");*/
     }
 
     public void SalvarDados(View view){
@@ -67,10 +59,7 @@ public class AdicionarAluno extends AppCompatActivity {
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("Aluno");
-
-        myRef.child("3").setValue(aluno1);
-
-
+        myRef.push().setValue(aluno1);
         Toast.makeText(getApplicationContext(), "Dados salvos", Toast.LENGTH_LONG).show();
         finish();
     }
