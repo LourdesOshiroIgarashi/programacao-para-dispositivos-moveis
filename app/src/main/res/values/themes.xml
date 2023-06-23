@@ -11,4 +11,7 @@
 
     <style name="Theme.Labin" parent="Base.Theme.Labin" />
 
+    <style name="Toolbar" parent="Theme.AppCompat.NoActionBar">
+    </style>
+
 </resources>
