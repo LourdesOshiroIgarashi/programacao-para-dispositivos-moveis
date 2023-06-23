@@ -13,6 +13,18 @@
         android:theme="@style/Theme.Labin"
         tools:targetApi="31">
         <activity
+            android:name=".view.VisualizarLaboratorio"
+            android:exported="false" />
+        <activity
+            android:name=".view.AdicionarLaboratorio"
+            android:exported="false" />
+        <activity
+            android:name=".view.VisualizarAluno"
+            android:exported="false" />
+        <activity
+            android:name=".view.AdicionarAluno"
+            android:exported="false" />
+        <activity
             android:name=".view.Aluno"
             android:exported="false" />
         <!--
