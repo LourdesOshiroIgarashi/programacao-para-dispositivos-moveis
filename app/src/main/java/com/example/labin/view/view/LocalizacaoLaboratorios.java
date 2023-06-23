@@ -1,4 +1,4 @@
-package com.example.labin.view;
+package com.example.labin.view.view;
 
 import androidx.fragment.app.FragmentActivity;
 

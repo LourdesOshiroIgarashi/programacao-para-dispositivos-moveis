@@ -1,4 +1,4 @@
-package com.example.labin.view;
+package com.example.labin.view.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,11 +6,11 @@ import android.os.Bundle;
 
 import com.example.labin.R;
 
-public class VisualizarAluno extends AppCompatActivity {
+public class AdicionarLaboratorio extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_visualizar_aluno);
+        setContentView(R.layout.activity_adicionar_laboratorio);
     }
 }

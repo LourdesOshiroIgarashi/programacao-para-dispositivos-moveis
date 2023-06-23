@@ -7,7 +7,7 @@
     android:gravity="center"
     android:onClick="visualizarAluno"
     android:orientation="vertical"
-    tools:context=".view.Aluno">
+    tools:context=".view.view.Aluno">
 
     <TextView
         android:id="@+id/textView"

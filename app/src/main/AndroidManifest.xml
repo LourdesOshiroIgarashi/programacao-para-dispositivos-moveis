@@ -13,19 +13,19 @@
         android:theme="@style/Theme.Labin"
         tools:targetApi="31">
         <activity
-            android:name=".view.VisualizarLaboratorio"
+            android:name=".view.view.VisualizarLaboratorio"
             android:exported="false" />
         <activity
-            android:name=".view.AdicionarLaboratorio"
+            android:name=".view.view.AdicionarLaboratorio"
             android:exported="false" />
         <activity
-            android:name=".view.VisualizarAluno"
+            android:name=".view.view.VisualizarAluno"
             android:exported="false" />
         <activity
-            android:name=".view.AdicionarAluno"
+            android:name=".view.view.AdicionarAluno"
             android:exported="false" />
         <activity
-            android:name=".view.Aluno"
+            android:name=".view.view.Aluno"
             android:exported="false" />
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
@@ -43,20 +43,20 @@
             android:value="YOUR_API_KEY" />
 
         <activity
-            android:name=".view.LocalizacaoLaboratorios"
+            android:name=".view.view.LocalizacaoLaboratorios"
             android:exported="false"
             android:label="@string/title_activity_localizacao_laboratorios" />
         <activity
-            android:name=".view.Laboratorios"
+            android:name=".view.view.Laboratorios"
             android:exported="false" />
         <activity
-            android:name=".view.Registro"
+            android:name=".view.view.Registro"
             android:exported="false" />
         <activity
-            android:name=".view.Login"
+            android:name=".view.view.Login"
             android:exported="false" />
         <activity
-            android:name=".view.MainActivity"
+            android:name=".view.view.MainActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light">
             <intent-filter>
