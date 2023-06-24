@@ -13,6 +13,6 @@ public class VisualizarLaboratorio extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_visualizar_laboratorio);
 
-        
+
     }
 }
