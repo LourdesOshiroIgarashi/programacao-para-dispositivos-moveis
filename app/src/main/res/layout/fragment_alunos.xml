@@ -7,8 +7,12 @@
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:id="@+id/textAlunos"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:text="alunos"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textSize="24sp" />
 
 </FrameLayout>
