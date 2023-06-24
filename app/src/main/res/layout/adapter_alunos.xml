@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="157dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/nomeLab"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nome Aluno"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/latLab"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="email"
+            android:textAlignment="textEnd"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/longLab"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="laboratório"
+            android:textAlignment="textEnd"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/facLab"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="curso"
+            android:textAlignment="textEnd"
+            android:textAllCaps="false"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="telefone"
+            android:textAlignment="textEnd"
+            android:textSize="20sp" />
+    </LinearLayout>
+</LinearLayout>

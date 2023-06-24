@@ -2,7 +2,10 @@ package com.example.labin.view.fragment;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +13,17 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.labin.R;
+import com.example.labin.view.adapter.AlunosAdapter;
+import com.example.labin.view.entities.Aluno;
+import com.example.labin.view.entities.Laboratorio;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -26,21 +40,16 @@ public class AlunosFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    private TextView textAlunos;
+    private RecyclerView recyclerViewAlunos;
+    private List<Aluno> listaAluno = new ArrayList<>();
+    private AlunosAdapter adapter;
+    private FirebaseDatabase database;
+    private DatabaseReference reference;
 
     public AlunosFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment AlunosFragment.
-     */
-    // TODO: Rename and change types and number of parameters
     public static AlunosFragment newInstance(String param1, String param2) {
         AlunosFragment fragment = new AlunosFragment();
         Bundle args = new Bundle();
@@ -64,7 +73,38 @@ public class AlunosFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_alunos, container, false);
-        textAlunos = view.findViewById(R.id.textAlunos);
+
+        recyclerViewAlunos = view.findViewById(R.id.recyclerListaAlunos);
+
+        database = FirebaseDatabase.getInstance();
+        reference = FirebaseDatabase.getInstance().getReference().child("Aluno");
+
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                    Aluno aluno = snapshot.getValue(Aluno.class);
+                    //String dado = snapshot.getValue(String.class);
+                    listaAluno.add(aluno);
+                }
+                adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+        //adapter
+        adapter = new AlunosAdapter(listaAluno, getActivity());
+
+        //recycler
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
+        recyclerViewAlunos.setLayoutManager(layoutManager);
+        recyclerViewAlunos.setHasFixedSize(true);
+        recyclerViewAlunos.setAdapter(adapter);
+
         return view;
     }
 }
