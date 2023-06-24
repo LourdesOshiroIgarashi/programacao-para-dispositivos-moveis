@@ -20,6 +20,8 @@ public class LaboratoriosAdapter extends RecyclerView.Adapter<LaboratoriosAdapte
 
     private List<Laboratorio> labs;
     private Context context;
+    private OnItemClickListener itemClickListener;
+
     public LaboratoriosAdapter(List<Laboratorio> lista, Context c) {
         this.labs = lista;
         this.context = c;
@@ -49,6 +51,15 @@ public class LaboratoriosAdapter extends RecyclerView.Adapter<LaboratoriosAdapte
         //foto padrão
         //holder.foto.setImageResource(R.drawable.baseline_logout_24);
 
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (itemClickListener != null) {
+                    itemClickListener.onItemClick(position);
+                }
+            }
+        });
+
     }
 
     @Override
@@ -70,4 +81,13 @@ public class LaboratoriosAdapter extends RecyclerView.Adapter<LaboratoriosAdapte
 
         }
     }
+
+    public interface OnItemClickListener {
+        void onItemClick(int position);
+    }
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        this.itemClickListener = listener;
+    }
+
+
 }

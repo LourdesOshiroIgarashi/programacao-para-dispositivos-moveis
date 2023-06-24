@@ -1,18 +1,23 @@
 package com.example.labin.view.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.labin.R;
 import com.example.labin.view.adapter.LaboratoriosAdapter;
 import com.example.labin.view.entities.Laboratorio;
+import com.example.labin.view.view.LocalizacaoLaboratorios;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -106,6 +111,29 @@ public class LaboratoriosFragment extends Fragment {
         recyclerViewListaLabs.setLayoutManager(layoutManager);
         recyclerViewListaLabs.setHasFixedSize(true);
         recyclerViewListaLabs.setAdapter(laboratoriosAdapter);
+
+
+        laboratoriosAdapter.setOnItemClickListener(new LaboratoriosAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(int position) {
+
+                double lat, lon;
+                lat = listalabs.get(position).getLatitudeCadastro();
+                lon = listalabs.get(position).getLatitudeCadastro();
+                //Toast.makeText(getContext(), "Clicou na posição: " + lat + " " + lon, Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(getContext(), LocalizacaoLaboratorios.class);
+
+                String latS = String.valueOf(lat);
+                String longS = String.valueOf(lon);
+                intent.putExtra("lat", lat);
+                intent.putExtra("lon", lon);
+
+                startActivity(intent);
+            }
+        });
+
         return view;
     }
+
 }
