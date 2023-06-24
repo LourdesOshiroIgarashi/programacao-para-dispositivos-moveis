@@ -25,7 +25,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class Login extends AppCompatActivity {
 
     private EditText email, senha;
-    private Button btnLogin, btnRegistrar;
+    private Button btnLogin, btnRegistrar, visitante;
     private FirebaseAuth auth;
     private ProgressBar progressBar;
     private CheckBox checkBox;
@@ -38,11 +38,20 @@ public class Login extends AppCompatActivity {
         email = findViewById(R.id.edtEmail);
         senha = findViewById(R.id.edtSenha);
         btnLogin = findViewById(R.id.btnLogin);
+        visitante = findViewById(R.id.visitante);
         btnRegistrar = findViewById(R.id.btnRegistrar);
         progressBar = findViewById(R.id.pbLogin);
         checkBox = findViewById(R.id.cbMostrarSenha);
 
 
+        visitante.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(), viewLabsAlunos.class);
+                startActivity(i);
+                finish();
+            }
+        });
         btnRegistrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
