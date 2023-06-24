@@ -31,7 +31,7 @@ public class Aluno extends AppCompatActivity {
     }
 
     public void visualizarAluno(View view){
-        Intent intent = new Intent(getApplicationContext(), VisualizarAluno.class);
+        Intent intent = new Intent(getApplicationContext(), viewLabsAlunos.class);
         startActivity(intent);
     }
 }

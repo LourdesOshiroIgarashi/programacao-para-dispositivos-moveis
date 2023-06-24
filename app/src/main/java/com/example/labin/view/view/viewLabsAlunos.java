@@ -11,7 +11,7 @@ import com.example.labin.R;
 import com.example.labin.view.fragment.AlunosFragment;
 import com.example.labin.view.fragment.LaboratoriosFragment;
 
-public class VisualizarLaboratorio extends AppCompatActivity {
+public class viewLabsAlunos extends AppCompatActivity {
 
 
     private Button btnLab, btnAluno;

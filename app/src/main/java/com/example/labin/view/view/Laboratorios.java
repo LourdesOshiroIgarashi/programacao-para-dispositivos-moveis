@@ -30,7 +30,7 @@ public class Laboratorios extends AppCompatActivity {
     }
 
     public void visualizarLaboratorio(View view){
-        Intent intent = new Intent(getApplicationContext(), VisualizarLaboratorio.class);
+        Intent intent = new Intent(getApplicationContext(), viewLabsAlunos.class);
         startActivity(intent);
     }
 }
