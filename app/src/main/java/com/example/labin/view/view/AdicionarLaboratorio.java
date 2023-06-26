@@ -17,7 +17,7 @@ public class AdicionarLaboratorio extends AppCompatActivity {
 
 
     private EditText latitudeCadastro, longitudeCadastro, nomeCadastro, FaculdadeResponsavel;
-    private Button btnSalvarLab;
+    private Button btnSalvarLab, btnAddFoto;
     private FirebaseDatabase database;
     private DatabaseReference reference;
     @Override
@@ -30,6 +30,15 @@ public class AdicionarLaboratorio extends AppCompatActivity {
         nomeCadastro=findViewById(R.id.nomeCadastro);
         FaculdadeResponsavel=findViewById(R.id.FaculdadeResponsavel);
         btnSalvarLab=findViewById(R.id.btnSalvarLab);
+        btnAddFoto=findViewById(R.id.btnAddFoto);
+
+
+        btnAddFoto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
 
 
     }

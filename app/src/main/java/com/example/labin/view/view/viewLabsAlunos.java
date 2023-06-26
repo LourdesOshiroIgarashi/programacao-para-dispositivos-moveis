@@ -25,12 +25,6 @@ public class viewLabsAlunos extends AppCompatActivity {
         btnLab = findViewById(R.id.btnLab);
         btnAluno = findViewById(R.id.btnAluno);
 
-
-
-
-
-
-
         btnAluno.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
