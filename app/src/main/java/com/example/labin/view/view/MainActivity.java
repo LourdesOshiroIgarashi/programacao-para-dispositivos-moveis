@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button btnAddAluno, btnVisualizarLaboratorio;
     private FirebaseAuth auth;
-    private Button logout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,6 +63,9 @@ public class MainActivity extends AppCompatActivity {
         if(item.getItemId()==R.id.logout){
             auth.signOut();
             irLogin();
+        }else{
+            Intent i = new Intent(getApplicationContext(), configuracoes.class);
+            startActivity(i);
         }
 
         return super.onOptionsItemSelected(item);
