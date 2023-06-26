@@ -1,15 +1,15 @@
 # Labin - Trabalho Final
 
+## Alunos
+- Everton de Oliveira: 2021.1906.022-0
+- Lourdes Oshiro Igarashi: 2021.1906.032-8
+
 ## Visão Geral do Software:
 O objetivo principal do aplicativo proposto é fortalecer a integração entre os pesquisadores e laboratórios da UFMS, com o intuito de aumentar a quantidade de publicações e artigos científicos provenientes do centro de pesquisa. A ideia central é melhorar a visibilidade e o destaque científico da universidade por meio do compartilhamento de conhecimentos, recursos e colaborações entre os pesquisadores.
 
 O software terá como foco a facilitação da colaboração e troca de informações entre os pesquisadores e laboratórios da UFMS. Serão fornecidas ferramentas que permitirão aos pesquisadores compartilhar detalhes de suas pesquisas em andamento, promover discussões, solicitar ajuda ou colaboração de outros pesquisadores e realizar revisões conjuntas de artigos científicos. Além disso, o software poderá fornecer recursos de rastreamento de citações, permitindo aos pesquisadores acompanhar a visibilidade e o impacto de suas publicações.
 
 ## Papéis:
-
-- Administrador: O administrador terá permissões abrangentes no sistema. Ele será responsável por cadastrar, editar e excluir informações sobre todos os laboratórios e usuários do sistema. Além disso, terá a capacidade de vincular coordenadores a laboratórios e gerenciar as permissões de acesso de cada usuário.
-
-- Coordenador: O coordenador terá permissões específicas relacionadas ao laboratório que ele supervisiona. Ele poderá cadastrar, editar e excluir informações sobre o seu laboratório, incluindo detalhes sobre as pesquisas em andamento. Além disso, o coordenador poderá vincular novos pesquisadores ao laboratório, facilitando a colaboração e o compartilhamento de conhecimentos.
 
 - Pesquisador: O pesquisador será vinculado a um laboratório específico. Ele terá permissões para cadastrar, editar e excluir informações sobre suas pesquisas em andamento. Essas informações podem incluir detalhes sobre a metodologia, resultados e conclusões das pesquisas.
 
@@ -19,7 +19,7 @@ Com esses papéis e funcionalidades, o aplicativo possibilitará uma melhor gest
 
 ## Recursos
 
-- Banco de dados: Ficará registrado os coordenadores, pesquisadores e o administrador.
+- Banco de dados: Ficará registrado os pesquisadores, os alunos e os laboratórios.
 
 - Mapas: Mostra onde fica os laboratórios ou grupo de pesquisa da Universidade.
 
@@ -28,7 +28,6 @@ Com esses papéis e funcionalidades, o aplicativo possibilitará uma melhor gest
     * Imagem do app diferente da configuração padrão do android.
 
 - Fotos:
-    * Usuário.
     * Grupo de pesquisa.
 
 - Cores:
@@ -37,7 +36,7 @@ Com esses papéis e funcionalidades, o aplicativo possibilitará uma melhor gest
     * text (color)
     * button 
  
-- Sons: em ações concluídas com sucesso
+- Sons: em ações concluídas com sucesso e sem sucesso
 
 - Notificações: quando algo for modificado, os usuários vinculados ao laboratório ou a pesquisa serão notificados
 
