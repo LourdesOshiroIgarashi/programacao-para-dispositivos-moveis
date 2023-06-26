@@ -1,6 +1,39 @@
 <resources>
     <string name="app_name">Labin</string>
     <string name="title_activity_localizacao_laboratorios">LocalizacaoLaboratorios</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="login">Login</string>
+    <string name="cadastrar">Cadastrar</string>
+    <string name="criar_conta">Criar conta</string>
+    <string name="registrar">Registrar</string>
+    <string name="visitante">Visitante</string>
+    <string name="email">E-mail</string>
+    <string name="senha">Senha</string>
+    <string name="confirmar_senha">Confirme a senha</string>
+    <string name="mostrar_senha">Mostrar senha</string>
+    <string name="dados_salvos">Dados salvos</string>
+    <string name="voltar">Voltar</string>
+
+    <string name="laboratorio">Laboratório</string>
+    <string name="laboratorios">Laboratórios</string>
+
+    <string name="alunos">Alunos</string>
+    <string name="perfil_pesquisador">Perfil Pesquisador</string>
+    <string name="mesma_senha">Senha deve ser o mesmo nos dois campos</string>
+    <string name="adicionar_aluno_banco">Adicionar o aluno no Bando de Dados</string>
+    <string name="nome_aluno">Nome do Aluno</string>
+    <string name="laboratorio_aluno">Laboratório do aluno</string>
+    <string name="email_aluno">E-mail do aluno</string>
+    <string name="curso_aluno">Curso do aluno</string>
+
+    <string name="nome_laboratorio">Nome Laboratório</string>
+    <string name="latitude">Latitude</string>
+    <string name="longitude">Longitude</string>
+    <string name="faculdade_responsavel">Faculdade Responsável</string>
+    <string name="curso">Curso</string>
+    <string name="telefone">Telefone</string>
+    <string name="adicionar_aluno">Adicionar Aluno</string>
+    <string name="logout">Logout</string>
+    <string name="configuracoes">Configurações</string>
 </resources>

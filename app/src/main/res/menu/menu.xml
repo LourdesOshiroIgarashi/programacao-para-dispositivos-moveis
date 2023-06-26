@@ -4,12 +4,12 @@
 
     <item
         android:id="@+id/logout"
-        android:title="Logout"
+        android:title="@string/logout"
         app:showAsAction="never" />
 
     <item
         android:id="@+id/config"
-        android:title="Configurações"
+        android:title="@string/configuracoes"
         app:showAsAction="never" />
 
 </menu>

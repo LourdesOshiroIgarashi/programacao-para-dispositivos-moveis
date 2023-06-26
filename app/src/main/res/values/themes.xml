@@ -5,7 +5,7 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
-        <item name="colorPrimary">#8BC34A</item>
+        <item name="colorPrimary">@color/azul_escuro</item>
         <item name="colorPrimaryDark">@color/mid</item>
     </style>
 
