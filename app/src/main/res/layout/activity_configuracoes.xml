@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".view.view.configuracoes">
+
+    <ImageView
+        android:id="@+id/imagemFoto"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:adjustViewBounds="false"
+        android:cropToPadding="false"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/everton" />
+
+    <TextView
+        android:id="@+id/nomePesquisador"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Nome do pesquisador"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/faculdadePesquisador"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Faculdade do pesquisador"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/LaboratorioPesquisador"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Laboratório do pesquisador"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/addFoto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Upload Foto"
+        android:drawableEnd="@drawable/baseline_upload_24"/>
+    <Button
+        android:id="@+id/tirarFoto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Tirar uma foto"
+        android:drawableEnd="@drawable/baseline_photo_camera_24"/>
+    <Button
+        android:id="@+id/addConfi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Continuar cadastro"
+        android:onClick="continuarCadastro"
+        android:drawableEnd="@drawable/baseline_manage_accounts_24"/>
+</LinearLayout>
