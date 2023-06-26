@@ -61,7 +61,7 @@ public class AdicionarLaboratorio extends AppCompatActivity {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("Laboratorio");
         myRef.push().setValue(labs);
-        Toast.makeText(getApplicationContext(), "Dados salvos", Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), getString(R.string.dados_salvos), Toast.LENGTH_LONG).show();
         finish();
     }
 }

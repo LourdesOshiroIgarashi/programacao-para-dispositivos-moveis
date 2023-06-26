@@ -14,7 +14,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Adicionar Laboratórios"
+        android:text="@string/adicionar_laboratorio"
         android:textSize="32sp" />
 
     <Button
@@ -24,14 +24,14 @@
         android:layout_marginTop="16dp"
         android:drawableLeft="@drawable/baseline_person_add_24"
         android:onClick="adicionarLaboratorio"
-        android:text="Laboratório" />
+        android:text="@string/laboratorio" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Visualizar Laboratórios"
+        android:text="@string/visualizar_laboratorio"
         android:textSize="32sp" />
 
     <Button
@@ -41,6 +41,6 @@
         android:layout_marginTop="16dp"
         android:drawableLeft="@drawable/baseline_view_list_24"
         android:onClick="visualizarLaboratorio"
-        android:text="Laboratório" />
+        android:text="@string/laboratorio" />
 
 </LinearLayout>

@@ -60,7 +60,7 @@ public class AdicionarAluno extends AppCompatActivity {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("Aluno");
         myRef.push().setValue(aluno1);
-        Toast.makeText(getApplicationContext(), "Dados salvos", Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), getString(R.string.dados_salvos), Toast.LENGTH_LONG).show();
         finish();
     }
 }

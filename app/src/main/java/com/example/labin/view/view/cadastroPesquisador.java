@@ -61,7 +61,7 @@ public class cadastroPesquisador extends AppCompatActivity {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("Pesquisador");
         myRef.child(uid).setValue(pesquisador);
-        Toast.makeText(getApplicationContext(), "Dados salvos", Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), getString(R.string.dados_salvos), Toast.LENGTH_LONG).show();
         finish();
     }
 }

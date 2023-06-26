@@ -86,7 +86,7 @@ public class Registro extends AppCompatActivity {
                             }
                         });
                     }else{
-                        Toast.makeText(getApplicationContext(), "Senha deve ser o mesmo nos dois campos", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), getString(R.string.mesma_senha), Toast.LENGTH_SHORT).show();
                     }
                 }
             }

@@ -14,7 +14,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Criar Conta"
+        android:text="@string/criar_conta"
         android:textColor="@color/white"
         android:textSize="50sp"
         android:layout_marginBottom="120dp"
@@ -24,7 +24,7 @@
         android:id="@+id/edtEmailRegistro"
         android:layout_width="380dp"
         android:layout_height="wrap_content"
-        android:hint="E-mail"
+        android:hint="@string/email"
         android:inputType="textEmailAddress"
         android:textColorHint="@color/white"
         android:backgroundTint="@color/white"/>
@@ -33,7 +33,7 @@
         android:id="@+id/edtSenhaRegistro"
         android:layout_width="380dp"
         android:layout_height="wrap_content"
-        android:hint="Senha"
+        android:hint="@string/senha"
         android:inputType="textPassword"
         android:textColorHint="@color/white"
         android:backgroundTint="@color/white"
@@ -43,7 +43,7 @@
         android:id="@+id/edtSenhaConfirmacaoRegistro"
         android:layout_width="380dp"
         android:layout_height="wrap_content"
-        android:hint="Confirme a senha"
+        android:hint="@string/confirmar_senha"
         android:inputType="textPassword"
         android:textColorHint="@color/white"
         android:backgroundTint="@color/white"
@@ -53,7 +53,7 @@
         android:id="@+id/cbMostrarSenhaRegistro"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:text="Mostrar senha"
+        android:text="@string/mostrar_senha"
         android:textColor="@color/white"
         android:buttonTint="@color/white"
         android:layout_marginTop="16dp"
@@ -65,13 +65,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:background="@color/white"
-        android:text="Cadastrar"
-        android:textColor="#FFFFFF" />
+        android:text="@string/cadastrar"
+        android:textColor="@color/white" />
     <Button
         android:id="@+id/btnSairRegistro"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Voltar"
+        android:text="@string/voltar"
         android:background="@color/white"
         android:textColor="@color/white"
         android:layout_marginTop="16dp"/>

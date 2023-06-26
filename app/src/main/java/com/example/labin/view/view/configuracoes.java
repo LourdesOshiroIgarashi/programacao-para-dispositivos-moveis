@@ -121,7 +121,7 @@ public class configuracoes extends AppCompatActivity {
                 uploadTask.addOnFailureListener(configuracoes.this, new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(configuracoes.this, "Upload da imagem falhou: "+e.getMessage(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(configuracoes.this, getString(R.string.upload_imagem_falhou) +e.getMessage(), Toast.LENGTH_LONG).show();
                     }
                 }).addOnSuccessListener(configuracoes.this, new OnSuccessListener<UploadTask.TaskSnapshot>() {
                     @Override
