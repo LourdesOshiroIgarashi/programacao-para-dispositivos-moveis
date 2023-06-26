@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.labin.Manifest;
 import com.example.labin.R;
 import com.example.labin.view.entities.Aluno;
 import com.example.labin.view.entities.Pesquisador;
@@ -43,6 +44,11 @@ public class configuracoes extends AppCompatActivity {
     private TextView nomePesquisador, faculdadePesquisador, LaboratorioPesquisador;
     private FirebaseDatabase database;
     private DatabaseReference reference;
+
+    private String[] permissoesNecessarias = new String[]{
+            Manifest.permission.READ_EXTERNAL_STORAGE,
+            Manifest.permission.CAMERA
+    };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
