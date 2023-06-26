@@ -23,7 +23,7 @@
         android:id="@+id/tvPerfil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Seu perfil é de Professor"
+        android:text="Seu perfil é de Pesquisador"
         android:textColor="@color/black"
         android:layout_marginBottom="16dp"
         android:textSize="26sp"/>
