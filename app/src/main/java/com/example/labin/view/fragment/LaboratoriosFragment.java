@@ -120,16 +120,8 @@ public class LaboratoriosFragment extends Fragment {
                 double lat, lon;
                 lat = listalabs.get(position).getLatitudeCadastro();
                 lon = listalabs.get(position).getLatitudeCadastro();
-                //Toast.makeText(getContext(), "Clicou na posição: " + lat + " " + lon, Toast.LENGTH_SHORT).show();
-
-                Intent intent = new Intent(getContext(), LocalizacaoLaboratorios.class);
-
-                String latS = String.valueOf(lat);
-                String longS = String.valueOf(lon);
-                intent.putExtra("lat", lat);
-                intent.putExtra("lon", lon);
-
-                startActivity(intent);
+                //Intent intent = new Intent(getContext(), LocalizacaoLaboratorios.class);
+                //startActivity(intent);
             }
         });
 

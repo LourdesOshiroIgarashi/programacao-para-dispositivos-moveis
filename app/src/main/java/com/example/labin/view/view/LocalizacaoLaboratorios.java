@@ -4,6 +4,7 @@ import androidx.fragment.app.FragmentActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.example.labin.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -30,23 +31,17 @@ public class LocalizacaoLaboratorios extends FragmentActivity implements OnMapRe
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);
-
-        Intent intent = getIntent();
-
-        String latS = intent.getStringExtra("lat");
-        String lonS = intent.getStringExtra("lon");
+        mapFragment.getMapAsync(LocalizacaoLaboratorios.this);
 
 
     }
-
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
         // Add a marker in Sydney and move the camera
-        LatLng lab = new LatLng(122, 122);
+        LatLng lab = new LatLng(0, 0);
         mMap.addMarker(new MarkerOptions().position(lab).title("Laboratório"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(lab));
     }
