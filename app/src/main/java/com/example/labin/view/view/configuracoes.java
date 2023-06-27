@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -43,6 +44,9 @@ public class configuracoes extends AppCompatActivity {
     private FirebaseDatabase database;
     private DatabaseReference reference;
 
+    static final int REQUEST_IMAGE_CAPTURE = 1;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,10 +57,6 @@ public class configuracoes extends AppCompatActivity {
         nomePesquisador = findViewById(R.id.nomePesquisador);
         faculdadePesquisador = findViewById(R.id.faculdadePesquisador);
         LaboratorioPesquisador = findViewById(R.id.LaboratorioPesquisador);
-
-
-
-
 
 
         FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
@@ -82,6 +82,7 @@ public class configuracoes extends AppCompatActivity {
             });
 
         }catch (Exception e){
+
             nomePesquisador.setText("");
             faculdadePesquisador.setText("");
             LaboratorioPesquisador.setText("");
@@ -148,3 +149,4 @@ public class configuracoes extends AppCompatActivity {
         startActivity(i);
     }
 }
+
