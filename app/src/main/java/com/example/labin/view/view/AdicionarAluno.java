@@ -3,6 +3,7 @@ package com.example.labin.view.view;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -25,6 +26,8 @@ public class AdicionarAluno extends AppCompatActivity {
     private EditText nomeAluno, laboratorioAluno, emailAluno, cursoAluno;
     private TextView txt1;
     private Button btnSalvarAluno;
+
+    private MediaPlayer mediaPlayer;
 
     private FirebaseDatabase database;
     private DatabaseReference reference;
@@ -52,7 +55,9 @@ public class AdicionarAluno extends AppCompatActivity {
         aluno1.setEmail(emailAluno.getText().toString());
         aluno1.setLaboratorio(laboratorioAluno.getText().toString());
 
-
+        if(mediaPlayer!=null){
+            mediaPlayer.release();
+        }
 
         database = FirebaseDatabase.getInstance();
         reference = database.getReference();
@@ -60,7 +65,13 @@ public class AdicionarAluno extends AppCompatActivity {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("Aluno");
         myRef.push().setValue(aluno1);
+        mediaPlayer= MediaPlayer.create(getApplicationContext(),R.raw.success);
         Toast.makeText(getApplicationContext(), getString(R.string.dados_salvos), Toast.LENGTH_LONG).show();
+
+        if(mediaPlayer!=null){
+            mediaPlayer.start();
+            mediaPlayer.setOnCompletionListener(mp -> mediaPlayer.release());
+        }
         finish();
     }
 }

@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.text.method.HideReturnsTransformationMethod;
@@ -29,6 +30,7 @@ public class Registro extends AppCompatActivity {
     private FirebaseAuth auth;
     private CheckBox checkBox;
     private ProgressBar pbRegistro;
+    private MediaPlayer mediaPlayer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -77,16 +79,46 @@ public class Registro extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if(task.isSuccessful()){
+                                    if(mediaPlayer!=null){
+                                        mediaPlayer.release();
+                                    }
+
+                                    mediaPlayer= MediaPlayer.create(getApplicationContext(),R.raw.success);
+
+                                    if(mediaPlayer!=null){
+                                        mediaPlayer.start();
+                                        mediaPlayer.setOnCompletionListener(mp -> mediaPlayer.release());
+                                    }
                                     abrirTelaPrincipal();
                                 }else{
+                                    if(mediaPlayer!=null){
+                                        mediaPlayer.release();
+                                    }
+
                                     String error = task.getException().getMessage();
                                     Toast.makeText(getApplicationContext(), ""+error, Toast.LENGTH_SHORT).show();
+                                    mediaPlayer= MediaPlayer.create(getApplicationContext(),R.raw.error);
+
+                                    if(mediaPlayer!=null){
+                                        mediaPlayer.start();
+                                        mediaPlayer.setOnCompletionListener(mp -> mediaPlayer.release());
+                                    }
                                 }
                                 pbRegistro.setVisibility(View.INVISIBLE);
                             }
                         });
                     }else{
+                        if(mediaPlayer!=null){
+                            mediaPlayer.release();
+                        }
+
                         Toast.makeText(getApplicationContext(), getString(R.string.mesma_senha), Toast.LENGTH_SHORT).show();
+                        mediaPlayer= MediaPlayer.create(getApplicationContext(),R.raw.error);
+
+                        if(mediaPlayer!=null){
+                            mediaPlayer.start();
+                            mediaPlayer.setOnCompletionListener(mp -> mediaPlayer.release());
+                        }
                     }
                 }
             }
