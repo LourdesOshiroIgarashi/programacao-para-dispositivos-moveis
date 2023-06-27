@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.text.method.HideReturnsTransformationMethod;
@@ -28,6 +29,7 @@ public class Login extends AppCompatActivity {
     private Button btnLogin, btnRegistrar, visitante;
     private FirebaseAuth auth;
     private ProgressBar progressBar;
+    private MediaPlayer mediaPlayer;
     private CheckBox checkBox;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,10 +85,26 @@ public class Login extends AppCompatActivity {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if(task.isSuccessful()){
+                                        if(mediaPlayer!=null){
+                                            mediaPlayer.release();
+                                        }
+                                        mediaPlayer= MediaPlayer.create(getApplicationContext(),R.raw.success);
+                                        if(mediaPlayer!=null){
+                                            mediaPlayer.start();
+                                            mediaPlayer.setOnCompletionListener(mp -> mediaPlayer.release());
+                                        }
                                         abrirTelaPrincipal();
                                     }else{
+                                        if(mediaPlayer!=null){
+                                            mediaPlayer.release();
+                                        }
                                         String error = task.getException().getMessage();
+                                        mediaPlayer= MediaPlayer.create(getApplicationContext(),R.raw.error);
                                         Toast.makeText(getApplicationContext(), ""+error, Toast.LENGTH_SHORT).show();
+                                        if(mediaPlayer!=null){
+                                            mediaPlayer.start();
+                                            mediaPlayer.setOnCompletionListener(mp -> mediaPlayer.release());
+                                        }
                                         progressBar.setVisibility(View.INVISIBLE);
                                     }
                                 }

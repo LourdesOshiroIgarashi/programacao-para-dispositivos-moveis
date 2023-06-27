@@ -2,6 +2,7 @@ package com.example.labin.view.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -19,6 +20,7 @@ public class AdicionarLaboratorio extends AppCompatActivity {
     private EditText latitudeCadastro, longitudeCadastro, nomeCadastro, FaculdadeResponsavel;
     private Button btnSalvarLab, btnAddFoto;
     private FirebaseDatabase database;
+    private MediaPlayer mediaPlayer;
     private DatabaseReference reference;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,10 +60,19 @@ public class AdicionarLaboratorio extends AppCompatActivity {
         database = FirebaseDatabase.getInstance();
         reference = database.getReference();
 
+        if(mediaPlayer!=null){
+            mediaPlayer.release();
+        }
+
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("Laboratorio");
         myRef.push().setValue(labs);
-        Toast.makeText(getApplicationContext(), "Dados salvos", Toast.LENGTH_LONG).show();
+        mediaPlayer= MediaPlayer.create(getApplicationContext(),R.raw.success);
+        Toast.makeText(getApplicationContext(), getString(R.string.dados_salvos), Toast.LENGTH_LONG).show();
+        if(mediaPlayer!=null){
+            mediaPlayer.start();
+            mediaPlayer.setOnCompletionListener(mp -> mediaPlayer.release());
+        }
         finish();
     }
 }

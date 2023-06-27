@@ -15,9 +15,9 @@
             android:id="@+id/nomeLab"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Nome Aluno"
+            android:text="@string/nome_aluno"
             android:textAlignment="textStart"
-            android:textColor="#9C27B0"
+            android:textColor="@color/azul_escuro"
             android:textSize="24sp"
             android:textStyle="bold" />
 
@@ -25,7 +25,7 @@
             android:id="@+id/latLab"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="email"
+            android:text="@string/email"
             android:textAlignment="textEnd"
             android:textSize="20sp" />
 
@@ -33,9 +33,9 @@
             android:id="@+id/longLab"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="laboratório"
+            android:text="@string/laboratorio"
             android:textAlignment="textEnd"
-            android:textColor="#673AB7"
+            android:textColor="@color/azul_escuro"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -43,10 +43,10 @@
             android:id="@+id/facLab"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="curso"
+            android:text="@string/curso"
             android:textAlignment="textEnd"
             android:textAllCaps="false"
-            android:textColor="#673AB7"
+            android:textColor="@color/azul_escuro"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -54,7 +54,7 @@
             android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="telefone"
+            android:text="@string/telefone"
             android:textAlignment="textEnd"
             android:textSize="20sp" />
     </LinearLayout>

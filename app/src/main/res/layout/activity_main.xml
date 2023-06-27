@@ -12,42 +12,34 @@
         layout="@layout/toolbar"
         android:layout_width="match_parent"
         android:layout_height="70dp" />
-<LinearLayout
-    android:padding="16dp"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center">
 
-    <TextView
-        android:id="@+id/tvPerfil"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Seu perfil é de Pesquisador"
-        android:textColor="@color/black"
-        android:layout_marginBottom="16dp"
-        android:textSize="26sp"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Adicionar - Deletar - Incluir"
-        android:textColor="@color/black"
-        android:layout_marginBottom="16dp"
-        android:textSize="26sp"/>
-    <Button
-        android:layout_marginTop="16dp"
-        android:id="@+id/btnAddAluno"
+    <LinearLayout
+        android:padding="16dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Alunos"/>
-    <Button
-        android:id="@+id/btnVisualizarLaboratorio"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Laboratórios"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
 
-
-</LinearLayout>
+        <TextView
+            android:id="@+id/tvPerfil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/perfil_pesquisador"
+            android:textColor="@color/black"
+            android:layout_marginBottom="16dp"
+            android:textSize="26sp"/>
+        <Button
+            android:layout_marginTop="16dp"
+            android:id="@+id/btnAddAluno"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/alunos"/>
+        <Button
+            android:id="@+id/btnVisualizarLaboratorio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/laboratorios"/>
+    </LinearLayout>
 
 
 

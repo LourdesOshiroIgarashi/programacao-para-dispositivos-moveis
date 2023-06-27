@@ -34,6 +34,9 @@
     <string name="curso">Curso</string>
     <string name="telefone">Telefone</string>
     <string name="adicionar_aluno">Adicionar Aluno</string>
+    <string name="adicionar_laboratorio">Adicionar Laboratórios</string>
+    <string name="visualizar_laboratorio">Visualizar Laboratórios</string>
     <string name="logout">Logout</string>
     <string name="configuracoes">Configurações</string>
+    <string name="upload_imagem_falhou">"Upload da imagem falhou: "</string>
 </resources>
