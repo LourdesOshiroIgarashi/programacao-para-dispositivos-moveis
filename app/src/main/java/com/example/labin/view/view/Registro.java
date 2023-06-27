@@ -68,63 +68,85 @@ public class Registro extends AppCompatActivity {
         cadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String registrarEmail = email.getText().toString();
-                String registrarSenha = senha.getText().toString();
-                String senhaConfirmada = senhaConfirmado.getText().toString();
 
-                if(!TextUtils.isEmpty(registrarEmail) || !TextUtils.isEmpty(registrarSenha) || !TextUtils.isEmpty(senhaConfirmada) ){
-                    if(registrarSenha.equals(senhaConfirmada)){
-                        pbRegistro.setVisibility(View.VISIBLE);
-                        auth.createUserWithEmailAndPassword(registrarEmail, senhaConfirmada).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                if(task.isSuccessful()){
-                                    if(mediaPlayer!=null){
-                                        mediaPlayer.release();
+                if(verificarTexto(email.getText().toString(), email.getText().toString(), senhaConfirmado.getText().toString())){
+                    String registrarEmail = email.getText().toString();
+                    String registrarSenha = senha.getText().toString();
+                    String senhaConfirmada = senhaConfirmado.getText().toString();
+
+
+                    if(!TextUtils.isEmpty(registrarEmail) || !TextUtils.isEmpty(registrarSenha) || !TextUtils.isEmpty(senhaConfirmada) ){
+                        if(registrarSenha.equals(senhaConfirmada)){
+                            pbRegistro.setVisibility(View.VISIBLE);
+                            auth.createUserWithEmailAndPassword(registrarEmail, senhaConfirmada).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                                @Override
+                                public void onComplete(@NonNull Task<AuthResult> task) {
+                                    if(task.isSuccessful()){
+                                        if(mediaPlayer!=null){
+                                            mediaPlayer.release();
+                                        }
+
+                                        mediaPlayer= MediaPlayer.create(getApplicationContext(),R.raw.success);
+
+                                        if(mediaPlayer!=null){
+                                            mediaPlayer.start();
+                                            mediaPlayer.setOnCompletionListener(mp -> mediaPlayer.release());
+                                        }
+                                        abrirTelaPrincipal();
+                                    }else{
+                                        if(mediaPlayer!=null){
+                                            mediaPlayer.release();
+                                        }
+
+                                        String error = task.getException().getMessage();
+                                        Toast.makeText(getApplicationContext(), ""+error, Toast.LENGTH_SHORT).show();
+                                        mediaPlayer= MediaPlayer.create(getApplicationContext(),R.raw.error);
+
+                                        if(mediaPlayer!=null){
+                                            mediaPlayer.start();
+                                            mediaPlayer.setOnCompletionListener(mp -> mediaPlayer.release());
+                                        }
                                     }
-
-                                    mediaPlayer= MediaPlayer.create(getApplicationContext(),R.raw.success);
-
-                                    if(mediaPlayer!=null){
-                                        mediaPlayer.start();
-                                        mediaPlayer.setOnCompletionListener(mp -> mediaPlayer.release());
-                                    }
-                                    abrirTelaPrincipal();
-                                }else{
-                                    if(mediaPlayer!=null){
-                                        mediaPlayer.release();
-                                    }
-
-                                    String error = task.getException().getMessage();
-                                    Toast.makeText(getApplicationContext(), ""+error, Toast.LENGTH_SHORT).show();
-                                    mediaPlayer= MediaPlayer.create(getApplicationContext(),R.raw.error);
-
-                                    if(mediaPlayer!=null){
-                                        mediaPlayer.start();
-                                        mediaPlayer.setOnCompletionListener(mp -> mediaPlayer.release());
-                                    }
+                                    pbRegistro.setVisibility(View.INVISIBLE);
                                 }
-                                pbRegistro.setVisibility(View.INVISIBLE);
+                            });
+                        }else{
+                            if(mediaPlayer!=null){
+                                mediaPlayer.release();
                             }
-                        });
-                    }else{
-                        if(mediaPlayer!=null){
-                            mediaPlayer.release();
-                        }
 
-                        Toast.makeText(getApplicationContext(), getString(R.string.mesma_senha), Toast.LENGTH_SHORT).show();
-                        mediaPlayer= MediaPlayer.create(getApplicationContext(),R.raw.error);
+                            Toast.makeText(getApplicationContext(), getString(R.string.mesma_senha), Toast.LENGTH_SHORT).show();
+                            mediaPlayer= MediaPlayer.create(getApplicationContext(),R.raw.error);
 
-                        if(mediaPlayer!=null){
-                            mediaPlayer.start();
-                            mediaPlayer.setOnCompletionListener(mp -> mediaPlayer.release());
+                            if(mediaPlayer!=null){
+                                mediaPlayer.start();
+                                mediaPlayer.setOnCompletionListener(mp -> mediaPlayer.release());
+                            }
                         }
                     }
                 }
-            }
+                }
+
         });
     }
 
+    private boolean verificarTexto(String toString, String toString1, String toString2) {
+        if (toString == null || toString.equals("")) {
+            Toast.makeText(getApplicationContext(), "Digite um email", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+        if (toString1 == null || toString1.equals("")) {
+            Toast.makeText(getApplicationContext(), "Digite uma senha", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        if (toString2 == null || toString2.equals("")) {
+            Toast.makeText(getApplicationContext(), "Digite a confirmação de senha", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+        return true;
+    }
     private void abrirTelaPrincipal() {
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(intent);

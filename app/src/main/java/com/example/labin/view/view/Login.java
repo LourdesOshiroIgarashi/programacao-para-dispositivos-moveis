@@ -31,6 +31,7 @@ public class Login extends AppCompatActivity {
     private ProgressBar progressBar;
     private MediaPlayer mediaPlayer;
     private CheckBox checkBox;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,9 +65,9 @@ public class Login extends AppCompatActivity {
         checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked){
+                if (isChecked) {
                     senha.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
-                }else{
+                } else {
                     senha.setTransformationMethod(PasswordTransformationMethod.getInstance());
                 }
             }
@@ -75,44 +76,65 @@ public class Login extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 String loginEmail = email.getText().toString();
                 String loginSenha = senha.getText().toString();
 
-                if(!TextUtils.isEmpty(loginSenha) || !TextUtils.isEmpty(loginEmail)){
-                    progressBar.setVisibility(View.VISIBLE);
-                    auth.signInWithEmailAndPassword(loginEmail, loginSenha).
-                            addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                                @Override
-                                public void onComplete(@NonNull Task<AuthResult> task) {
-                                    if(task.isSuccessful()){
-                                        if(mediaPlayer!=null){
-                                            mediaPlayer.release();
+                if(verificarTexto(loginEmail, loginSenha)){
+                    if (!TextUtils.isEmpty(loginSenha) || !TextUtils.isEmpty(loginEmail)) {
+                        progressBar.setVisibility(View.VISIBLE);
+                        auth.signInWithEmailAndPassword(loginEmail, loginSenha).
+                                addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<AuthResult> task) {
+                                        if (task.isSuccessful()) {
+                                            if (mediaPlayer != null) {
+                                                mediaPlayer.release();
+                                            }
+                                            mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.success);
+                                            if (mediaPlayer != null) {
+                                                mediaPlayer.start();
+                                                mediaPlayer.setOnCompletionListener(mp -> mediaPlayer.release());
+                                            }
+                                            abrirTelaPrincipal();
+                                        } else {
+                                            if (mediaPlayer != null) {
+                                                mediaPlayer.release();
+                                            }
+                                            String error = task.getException().getMessage();
+                                            mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.error);
+                                            Toast.makeText(getApplicationContext(), "" + error, Toast.LENGTH_SHORT).show();
+                                            if (mediaPlayer != null) {
+                                                mediaPlayer.start();
+                                                mediaPlayer.setOnCompletionListener(mp -> mediaPlayer.release());
+                                            }
+                                            progressBar.setVisibility(View.INVISIBLE);
                                         }
-                                        mediaPlayer= MediaPlayer.create(getApplicationContext(),R.raw.success);
-                                        if(mediaPlayer!=null){
-                                            mediaPlayer.start();
-                                            mediaPlayer.setOnCompletionListener(mp -> mediaPlayer.release());
-                                        }
-                                        abrirTelaPrincipal();
-                                    }else{
-                                        if(mediaPlayer!=null){
-                                            mediaPlayer.release();
-                                        }
-                                        String error = task.getException().getMessage();
-                                        mediaPlayer= MediaPlayer.create(getApplicationContext(),R.raw.error);
-                                        Toast.makeText(getApplicationContext(), ""+error, Toast.LENGTH_SHORT).show();
-                                        if(mediaPlayer!=null){
-                                            mediaPlayer.start();
-                                            mediaPlayer.setOnCompletionListener(mp -> mediaPlayer.release());
-                                        }
-                                        progressBar.setVisibility(View.INVISIBLE);
                                     }
-                                }
-                            });
+                                });
+                    }
                 }
+
+
+
             }
         });
 
+    }
+
+    private boolean verificarTexto(String loginEmail, String loginSenha) {
+
+        //verificar login e senha se foram digitados
+        if (loginEmail == null || loginEmail.equals("")) {
+            Toast.makeText(getApplicationContext(), "Digite um email", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+        if (loginSenha == null || loginSenha.equals("")) {
+            Toast.makeText(getApplicationContext(), "Digite uma senha", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        return true;
     }
 
     private void abrirCadastro() {
