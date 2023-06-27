@@ -22,59 +22,60 @@
 
     <EditText
         android:id="@+id/edtEmailRegistro"
-        android:layout_width="380dp"
+        android:layout_width="357dp"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
         android:hint="@string/email"
         android:inputType="textEmailAddress"
-        android:textColorHint="@color/white"
-        android:backgroundTint="@color/white"/>
+        android:textColorHint="@color/white" />
 
     <EditText
         android:id="@+id/edtSenhaRegistro"
-        android:layout_width="380dp"
+        android:layout_width="359dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/white"
         android:hint="@string/senha"
         android:inputType="textPassword"
-        android:textColorHint="@color/white"
-        android:backgroundTint="@color/white"
-        android:layout_marginTop="8dp"/>
+        android:textColorHint="@color/white" />
 
     <EditText
         android:id="@+id/edtSenhaConfirmacaoRegistro"
-        android:layout_width="380dp"
+        android:layout_width="359dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/white"
         android:hint="@string/confirmar_senha"
         android:inputType="textPassword"
-        android:textColorHint="@color/white"
-        android:backgroundTint="@color/white"
-        android:layout_marginTop="8dp"/>
+        android:textColorHint="@color/white" />
 
     <CheckBox
         android:id="@+id/cbMostrarSenhaRegistro"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:text="@string/mostrar_senha"
-        android:textColor="@color/white"
-        android:buttonTint="@color/white"
         android:layout_marginTop="16dp"
-        android:layout_marginRight="70dp"/>
+        android:layout_marginRight="85dp"
+        android:buttonTint="@color/white"
+        android:text="@string/mostrar_senha"
+        android:textColor="@color/white" />
 
     <Button
         android:id="@+id/btnCadastrar"
-        android:layout_width="match_parent"
+        android:layout_width="361dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:background="@color/white"
         android:text="@string/cadastrar"
         android:textColor="@color/white" />
+
     <Button
         android:id="@+id/btnSairRegistro"
-        android:layout_width="match_parent"
+        android:layout_width="360dp"
         android:layout_height="wrap_content"
-        android:text="@string/voltar"
+        android:layout_marginTop="16dp"
         android:background="@color/white"
-        android:textColor="@color/white"
-        android:layout_marginTop="16dp"/>
+        android:text="@string/voltar"
+        android:textColor="@color/white" />
     <ProgressBar
         android:id="@+id/pbRegistro"
         android:layout_width="match_parent"

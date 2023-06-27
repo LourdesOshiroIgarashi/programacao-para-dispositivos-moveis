@@ -15,47 +15,49 @@
             android:id="@+id/nomeLab"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
             android:text="@string/nome_aluno"
             android:textAlignment="textStart"
             android:textColor="@color/azul_escuro"
-            android:textSize="24sp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/latLab"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
             android:text="@string/email"
-            android:textAlignment="textEnd"
+            android:textColor="@color/azul_escuro"
             android:textSize="20sp" />
 
         <TextView
             android:id="@+id/longLab"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
             android:text="@string/laboratorio"
-            android:textAlignment="textEnd"
             android:textColor="@color/azul_escuro"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/facLab"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
             android:text="@string/curso"
-            android:textAlignment="textEnd"
             android:textAllCaps="false"
             android:textColor="@color/azul_escuro"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
             android:text="@string/telefone"
-            android:textAlignment="textEnd"
+            android:textColor="@color/azul_escuro"
             android:textSize="20sp" />
     </LinearLayout>
 </LinearLayout>

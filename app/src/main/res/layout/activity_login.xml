@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/backgroud"
     android:gravity="center"
     android:orientation="vertical"
     android:padding="16dp"
-    android:background="@drawable/backgroud"
     tools:context=".view.view.Login">
 
 
@@ -15,26 +15,28 @@
         android:id="@+id/imageView2"
         android:layout_width="355dp"
         android:layout_height="116dp"
+        android:layout_marginBottom="20dp"
         app:srcCompat="@drawable/labin_branco" />
 
     <EditText
         android:id="@+id/edtEmail"
-        android:layout_width="380dp"
+        android:layout_width="335dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/white"
         android:hint="@string/email"
         android:inputType="textEmailAddress"
-        android:textColorHint="@color/white"
-        android:backgroundTint="@color/white"/>
+        android:textColorHint="@color/white" />
 
     <EditText
         android:id="@+id/edtSenha"
-        android:layout_width="380dp"
+        android:layout_width="338dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/white"
         android:hint="@string/senha"
         android:inputType="textPassword"
-        android:textColorHint="@color/white"
-        android:backgroundTint="@color/white"
-        android:layout_marginTop="8dp"/>
+        android:textColorHint="@color/white" />
 
     <CheckBox
         android:id="@+id/cbMostrarSenha"
@@ -48,43 +50,46 @@
 
     <Button
         android:id="@+id/btnLogin"
-        android:layout_width="match_parent"
+        android:layout_width="339dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:background="@color/white"
         android:text="@string/login"
         android:textColor="@color/white" />
+
     <Button
         android:id="@+id/btnRegistrar"
-        android:layout_width="match_parent"
+        android:layout_width="339dp"
         android:layout_height="wrap_content"
-        android:text="@string/registrar"
+        android:layout_marginTop="16dp"
         android:background="@color/white"
-        android:textColor="@color/white"
-        android:layout_marginTop="16dp"/>
+        android:text="@string/registrar"
+        android:textColor="@color/white" />
+
     <ProgressBar
         android:id="@+id/pbLogin"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:indeterminateTint="@color/white"
+        android:layout_marginTop="8dp"
         android:indeterminate="true"
-        android:visibility="invisible"
-        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-        android:layout_marginTop="8dp"/>
+        android:indeterminateTint="@color/white"
+        android:visibility="invisible" />
 
     <Button
         android:id="@+id/visitante"
-        android:layout_width="match_parent"
+        android:layout_width="338dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
         android:background="@color/white"
-        android:textColor="@color/white"
-        android:layout_marginTop="16dp"
-        android:text="@string/visitante" />
+        android:text="@string/visitante"
+        android:textColor="@color/white" />
 
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="165dp"
         android:layout_height="127dp"
+        android:layout_marginTop="20dp"
         app:srcCompat="@drawable/ufms_logo_negativo" />
 
 

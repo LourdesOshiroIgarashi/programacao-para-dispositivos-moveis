@@ -2,6 +2,7 @@ package com.example.labin.view.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -20,6 +21,8 @@ public class cadastroPesquisador extends AppCompatActivity {
 
 
     private Button button;
+
+    private MediaPlayer mediaPlayer;
     private EditText LabsPesquisador, nomePesquisador, faculdadePesquisador;
     private DatabaseReference reference;
 
@@ -54,6 +57,9 @@ public class cadastroPesquisador extends AppCompatActivity {
         String uid = firebaseUser.getUid();
         pesquisador.setEmail(uid);
 
+        if(mediaPlayer!=null){
+            mediaPlayer.release();
+        }
 
         database = FirebaseDatabase.getInstance();
         //reference = database.getReference();
@@ -61,7 +67,12 @@ public class cadastroPesquisador extends AppCompatActivity {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("Pesquisador");
         myRef.child(uid).setValue(pesquisador);
+        mediaPlayer= MediaPlayer.create(getApplicationContext(),R.raw.success);
         Toast.makeText(getApplicationContext(), getString(R.string.dados_salvos), Toast.LENGTH_LONG).show();
+        if(mediaPlayer!=null){
+            mediaPlayer.start();
+            mediaPlayer.setOnCompletionListener(mp -> mediaPlayer.release());
+        }
         finish();
     }
 }

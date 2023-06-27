@@ -15,10 +15,11 @@
         <TextView
             android:id="@+id/nomeLab"
             android:layout_width="match_parent"
+            android:layout_marginTop="20dp"
             android:layout_height="wrap_content"
             android:text="@string/nome_laboratorio"
-            android:textAlignment="center"
-            android:textSize="34sp"
+            android:textSize="20sp"
+            android:layout_marginLeft="10dp"
             android:textStyle="bold" />
 
         <TextView
@@ -26,25 +27,24 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/latitude"
-            android:textAlignment="textEnd"
+            android:layout_marginLeft="10dp"
             android:textSize="20sp" />
 
         <TextView
             android:id="@+id/longLab"
             android:layout_width="match_parent"
+            android:layout_marginLeft="10dp"
             android:layout_height="wrap_content"
             android:text="@string/longitude"
-            android:textAlignment="textEnd"
             android:textSize="20sp" />
 
         <TextView
             android:id="@+id/facLab"
+            android:layout_marginLeft="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/faculdade_responsavel"
-            android:textAllCaps="true"
-            android:textSize="22sp"
-            android:textStyle="bold" />
+            android:textSize="22sp" />
     </LinearLayout>
 
 </LinearLayout>
