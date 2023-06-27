@@ -59,6 +59,7 @@ public class configuracoes extends AppCompatActivity {
         LaboratorioPesquisador = findViewById(R.id.LaboratorioPesquisador);
 
 
+
         FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
         FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
         String uid = firebaseUser.getUid();
@@ -147,6 +148,7 @@ public class configuracoes extends AppCompatActivity {
         Toast.makeText(configuracoes.this, "iniciando a atividade de cadastro", Toast.LENGTH_LONG).show();
         Intent i = new Intent(this, cadastroPesquisador.class);
         startActivity(i);
+        finish();git
     }
 }
 
