@@ -21,14 +21,12 @@ Com esses papéis e funcionalidades, o aplicativo possibilitará uma melhor gest
 
 - Banco de dados: Ficará registrado os pesquisadores, os alunos e os laboratórios.
 
-- Mapas: Mostra onde fica os laboratórios ou grupo de pesquisa da Universidade.
-
 - Imagens:
     * Cada imagem terá contentDescription.
     * Imagem do app diferente da configuração padrão do android.
 
 - Fotos:
-    * Grupo de pesquisa.
+    * Foto do usuário.
 
 - Cores:
     * statusBarColor (theme)
@@ -36,14 +34,14 @@ Com esses papéis e funcionalidades, o aplicativo possibilitará uma melhor gest
     * text (color)
     * button 
  
-- Sons: em ações concluídas com sucesso e sem sucesso
-
-- Notificações: quando algo for modificado, os usuários vinculados ao laboratório ou a pesquisa serão notificados
+- Sons: em
+   * Ações concluídas com sucesso (som de sucesso): login, cadastro de pesquisador, cadastro de laboratório, cadastro de aluno.
+   * Ações sem sucesso (som de erro): campos inválidos, campos em branco, senha inválida, senha não confere com a confirmação de senha.
 
 - String
     * Todas as string dentro deste recurso deverá ser comentado e agrupado para ficar manutenível.
 
-- Menu: menu de navegação entre as telas e configurações do perfil do usuário
+- Menu: menu toolbar, acesso às configurações do perfil do usuário pesquisador e logout do usuário.
 
 - Câmera: utilizado para adicionar nova foto ao perfil, atualizar fotos de equipamentos e do local do laboratório, fotos relevantes para a pesquisa
 
