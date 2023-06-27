@@ -48,31 +48,62 @@ public class AdicionarLaboratorio extends AppCompatActivity {
     public void SalvarDados(View view){
 
         Laboratorio labs = new Laboratorio();
-        String entrada = latitudeCadastro.getText().toString();
-        double valorLatitude = Double.parseDouble(entrada);
-        labs.setLatitudeCadastro(valorLatitude);
-        entrada = longitudeCadastro.getText().toString();
-        double valorLongitude = Double.parseDouble(entrada);
-        labs.setLongitudeCadastro(valorLongitude);
-        labs.setFaculdadeResponsavel(FaculdadeResponsavel.getText().toString());
-        labs.setNomeCadastro(nomeCadastro.getText().toString());
 
-        database = FirebaseDatabase.getInstance();
-        reference = database.getReference();
 
-        if(mediaPlayer!=null){
-            mediaPlayer.release();
+
+
+
+        if(verificaTexto(latitudeCadastro.getText().toString(), longitudeCadastro.getText().toString(), FaculdadeResponsavel.getText().toString(), nomeCadastro.getText().toString())){
+            String entrada = latitudeCadastro.getText().toString();
+            double valorLatitude = Double.parseDouble(entrada);
+            labs.setLatitudeCadastro(valorLatitude);
+            entrada = longitudeCadastro.getText().toString();
+            double valorLongitude = Double.parseDouble(entrada);
+            labs.setLongitudeCadastro(valorLongitude);
+            labs.setFaculdadeResponsavel(FaculdadeResponsavel.getText().toString());
+            labs.setNomeCadastro(nomeCadastro.getText().toString());
+
+            database = FirebaseDatabase.getInstance();
+            reference = database.getReference();
+
+            if(mediaPlayer!=null){
+                mediaPlayer.release();
+            }
+
+            FirebaseDatabase database = FirebaseDatabase.getInstance();
+            DatabaseReference myRef = database.getReference("Laboratorio");
+            myRef.push().setValue(labs);
+            mediaPlayer= MediaPlayer.create(getApplicationContext(),R.raw.success);
+            Toast.makeText(getApplicationContext(), getString(R.string.dados_salvos), Toast.LENGTH_LONG).show();
+            if(mediaPlayer!=null){
+                mediaPlayer.start();
+                mediaPlayer.setOnCompletionListener(mp -> mediaPlayer.release());
+            }
+            finish();
         }
 
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("Laboratorio");
-        myRef.push().setValue(labs);
-        mediaPlayer= MediaPlayer.create(getApplicationContext(),R.raw.success);
-        Toast.makeText(getApplicationContext(), getString(R.string.dados_salvos), Toast.LENGTH_LONG).show();
-        if(mediaPlayer!=null){
-            mediaPlayer.start();
-            mediaPlayer.setOnCompletionListener(mp -> mediaPlayer.release());
+    }
+
+    private boolean verificaTexto(String toString, String toString1, String toString2, String toString3) {
+
+
+        if (toString == null || toString.equals("")) {
+            Toast.makeText(getApplicationContext(), "Digite uma latitude", Toast.LENGTH_SHORT).show();
+            return false;
         }
-        finish();
+
+        if (toString1 == null || toString1.equals("")) {
+            Toast.makeText(getApplicationContext(), "Digite uma longitude", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        if (toString2 == null || toString2.equals("")) {
+            Toast.makeText(getApplicationContext(), "Digite uma faculdade", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        if (toString3 == null || toString3.equals("")) {
+            Toast.makeText(getApplicationContext(), "Digite o nome do laboratório", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        return true;
     }
 }

@@ -50,28 +50,57 @@ public class AdicionarAluno extends AppCompatActivity {
     public void SalvarDados(View view){
 
         Aluno aluno1 = new Aluno();
-        aluno1.setNome(nomeAluno.getText().toString());
-        aluno1.setCurso(cursoAluno.getText().toString());
-        aluno1.setEmail(emailAluno.getText().toString());
-        aluno1.setLaboratorio(laboratorioAluno.getText().toString());
 
-        if(mediaPlayer!=null){
-            mediaPlayer.release();
+
+        if(verificarTexto(nomeAluno.getText().toString(), cursoAluno.getText().toString(), emailAluno.getText().toString(), laboratorioAluno.getText().toString())){
+            aluno1.setNome(nomeAluno.getText().toString());
+            aluno1.setCurso(cursoAluno.getText().toString());
+            aluno1.setEmail(emailAluno.getText().toString());
+            aluno1.setLaboratorio(laboratorioAluno.getText().toString());
+            if(mediaPlayer!=null){
+                mediaPlayer.release();
+            }
+
+            database = FirebaseDatabase.getInstance();
+            reference = database.getReference();
+
+            FirebaseDatabase database = FirebaseDatabase.getInstance();
+            DatabaseReference myRef = database.getReference("Aluno");
+            myRef.push().setValue(aluno1);
+            mediaPlayer= MediaPlayer.create(getApplicationContext(),R.raw.success);
+            Toast.makeText(getApplicationContext(), getString(R.string.dados_salvos), Toast.LENGTH_LONG).show();
+
+            if(mediaPlayer!=null){
+                mediaPlayer.start();
+                mediaPlayer.setOnCompletionListener(mp -> mediaPlayer.release());
+            }
+            finish();
         }
 
-        database = FirebaseDatabase.getInstance();
-        reference = database.getReference();
 
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("Aluno");
-        myRef.push().setValue(aluno1);
-        mediaPlayer= MediaPlayer.create(getApplicationContext(),R.raw.success);
-        Toast.makeText(getApplicationContext(), getString(R.string.dados_salvos), Toast.LENGTH_LONG).show();
+    }
 
-        if(mediaPlayer!=null){
-            mediaPlayer.start();
-            mediaPlayer.setOnCompletionListener(mp -> mediaPlayer.release());
+    private boolean verificarTexto(String toString, String toString1, String toString2, String toString3) {
+
+
+
+        if (toString == null || toString.equals("")) {
+            Toast.makeText(getApplicationContext(), "Digite o nome do aluno", Toast.LENGTH_SHORT).show();
+            return false;
         }
-        finish();
+
+        if (toString1 == null || toString1.equals("")) {
+            Toast.makeText(getApplicationContext(), "Digite o nome do curso", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        if (toString2 == null || toString2.equals("")) {
+            Toast.makeText(getApplicationContext(), "Digite o email", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        if (toString3 == null || toString3.equals("")) {
+            Toast.makeText(getApplicationContext(), "Digite o laboratório", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        return true;
     }
 }
