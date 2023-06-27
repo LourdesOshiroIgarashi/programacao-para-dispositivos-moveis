@@ -44,21 +44,21 @@
         android:textSize="16sp" />
 
     <Button
-        android:id="@+id/addFoto"
+        android:id="@+id/btnaddFoto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Upload Foto"
         android:drawableEnd="@drawable/baseline_upload_24"/>
     <Button
-        android:id="@+id/tirarFoto"
+        android:id="@+id/btntirarFoto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Tirar uma foto"
         android:drawableEnd="@drawable/baseline_photo_camera_24"/>
     <Button
-        android:id="@+id/addConfi"
+        android:id="@+id/btnaddConfi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
